@@ -1,101 +1,96 @@
-Multi-Class Weather Classification Project
-This project involves training and evaluating machine learning models for multi-class weather classification using the Multi-class Weather Dataset.
+```markdown
+# Weather Classification with Deep Learning
 
-Table of Contents
-Overview
-Project Structure
-Prerequisites
-Installation
-Usage
-Results
-Contributing
-License
-Overview
-This project aims to classify weather conditions into four categories: Cloudy, Rain, Shine, and Sunrise, using different machine learning models. The dataset consists of images captured under different weather conditions.
+This repository contains code and instructions for training a deep learning model to classify different weather conditions: Cloudy, Rain, Shine, and Sunrise using PyTorch.
 
-Three models have been implemented and evaluated:
+## Table of Contents
+- [Requirements](#requirements)
+- [Dataset](#dataset)
+- [Usage](#usage)
+- [Training](#training)
+- [Evaluation](#evaluation)
+- [Results](#results)
 
-Fully Connected Network (FCNet): A simple feedforward neural network.
-Convolutional Neural Network (CNN): A more complex neural network architecture designed for image classification.
-Transfer Learning with ResNet-18: Utilizing a pre-trained ResNet-18 model as a feature extractor for image classification.
-Project Structure
-The project structure is organized as follows:
+## Requirements
+- Python 3.x
+- PyTorch
+- torchvision
+- scikit-learn
+- PIL (Python Imaging Library)
+- matplotlib
+- Google Colab (optional, for GPU support)
 
-data/: Contains the Multi-class Weather Dataset.
-models/: Includes the implementation of the machine learning models.
-utils/: Helper functions and utilities.
-train.py: The main script for training the models.
-evaluate.py: Evaluation script to assess model performance.
-plot_results.py: Script for plotting training and validation results.
-Prerequisites
-Before running the code, make sure you have the following prerequisites installed:
+## Dataset
+We use the "Multi-class Weather Dataset" for training and evaluation. You can download it from [this link](https://your-dataset-link-here) and unzip it in the root directory.
 
-Python 3.x
-PyTorch
-NumPy
-PIL (Python Imaging Library)
-Matplotlib
-scikit-learn
-tqdm
-Jupyter Notebook (for running Jupyter notebooks, if used)
-You can install the required packages using the provided requirements.txt file.
+The dataset structure should look like this:
+```
+- Multi-class Weather Dataset/
+    - Cloudy/
+        - cloudy1.jpg
+        - cloudy2.jpg
+        - ...
+    - Rain/
+        - rain1.jpg
+        - rain2.jpg
+        - ...
+    - Shine/
+        - shine1.jpg
+        - shine2.jpg
+        - ...
+    - Sunrise/
+        - sunrise1.jpg
+        - sunrise2.jpg
+        - ...
+```
 
-Installation
-Clone this repository to your local machine:
+## Usage
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/weather-classification.git
+   cd weather-classification
+   ```
 
-bash
-Copy code
-git clone https://github.com/yourusername/multi-class-weather-classification.git
-cd multi-class-weather-classification
-Create a virtual environment (optional but recommended):
+2. Install the required Python packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-bash
-Copy code
-python -m venv venv
-source venv/bin/activate  # On Windows, use venv\Scripts\activate
-Install the required packages:
+## Training
+You can choose between three different models for training:
+- Fully Connected Neural Network (FCNet)
+- Convolutional Neural Network (CNN)
+- Transfer Learning with ResNet-18
 
-bash
-Copy code
-pip install -r requirements.txt
-Usage
-Training the Models: Run the following command to train the models:
+To train the FCNet model, run the following command:
+```bash
+python train_fcnet.py
+```
 
-bash
-Copy code
-python train.py
-You can adjust hyperparameters and settings within the train.py script.
+To train the CNN model, use:
+```bash
+python train_cnn.py
+```
 
-Evaluation: To evaluate model performance, run:
+To train the ResNet-18 transfer learning model:
+```bash
+python train_resnet.py
+```
 
-bash
-Copy code
-python evaluate.py
-This will provide confusion matrices and various metrics (accuracy, precision, recall, F1-score) for each model.
+You can adjust hyperparameters inside the respective training scripts.
 
-Plotting Results: To visualize training and validation results, run:
+## Evaluation
+To evaluate a trained model, run the following command:
+```bash
+python evaluate.py --model_path path/to/your/model.pth
+```
 
-bash
-Copy code
-python plot_results.py
-Results
-The project achieved the following results:
+Replace `path/to/your/model.pth` with the path to the trained model you want to evaluate.
 
-FCNet:
-Training Accuracy: 96.06%
-Validation Accuracy: 94.69%
-Test Accuracy: 93.85%
-CNN:
-Training Accuracy: 95.00%
-Validation Accuracy: 92.04%
-Test Accuracy: 91.67%
-Transfer Learning with ResNet-18:
-Training Accuracy: 97.33%
-Validation Accuracy: 95.00%
-Test Accuracy: 96.46%
-Contributing
-Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please create a GitHub issue or submit a pull request.
+## Results
+The evaluation script will display the accuracy, precision, recall, and F1-score for each weather class, as well as a confusion matrix.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Enjoy classifying weather conditions with deep learning!
+```
 
+In this simplified README, everything is contained in one file, and each section provides clear instructions on how to set up and use the project. You can add more details and explanations as needed for your specific project.
