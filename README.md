@@ -1,4 +1,3 @@
-```markdown
 # Weather Classification with Deep Learning
 
 This repository contains code and instructions for training a deep learning model to classify different weather conditions: Cloudy, Rain, Shine, and Sunrise using PyTorch.
